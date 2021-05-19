@@ -142,7 +142,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#myCode').html(JSON.stringify(medicationOrderData))
+    $('#myCode').html(medicationOrderData)
   };
 
 })(window);
