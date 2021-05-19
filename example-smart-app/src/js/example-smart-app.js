@@ -68,12 +68,13 @@
           query: {
             _count: 4
           }
+          ret.resolve(p);
+
         });
         $.when(pt, medicationOrder).fail(onError);
         $.when(pt, medicationOrder).done(function(patient, medicationOrder) {
-           console.log(medicationOrder);
+           console.log({medicationOrder});
         });
-                  ret.resolve(p);
 
       } else {
         onError();
