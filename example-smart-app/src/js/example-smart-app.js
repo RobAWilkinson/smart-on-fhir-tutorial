@@ -61,6 +61,7 @@
 
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
+          ret.resolve(p);
 
         });
          var medicationOrder = smart.patient.api.fetchAll({
@@ -68,7 +69,6 @@
           query: {
             _count: 4
           }
-          ret.resolve(p);
 
         });
         $.when(pt, medicationOrder).fail(onError);
