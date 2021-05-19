@@ -62,8 +62,19 @@
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
 
-          ret.resolve(p);
         });
+         var medicationOrder = smart.patient.api.fetchAll({
+          type: 'MedicationOrder',
+          query: {
+            _count: 4
+          }
+        });
+        $.when(pt, medicationOrder).fail(onError);
+        $.when(pt, medicationOrder).done(function(patient, medicationOrder) {
+           console.log(medicationOrder);
+        });
+                  ret.resolve(p);
+
       } else {
         onError();
       }
